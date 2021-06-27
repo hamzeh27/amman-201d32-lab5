@@ -62,7 +62,6 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     return [
         s2[0],m2[0],  a + " and " + b + " and " + c + " sum to " + s2[0] + ".",
         "The product of " + a + " and " + b + " and " + c + " is " + m2[0] + "." ]; }
-}
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
  testSumAndMultiply(4, 7, 5);
