@@ -52,10 +52,14 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-    let sumResult = a+b+c;
-    let mulResult = a*b*c;
-    return [sumResult,mulResult,a + ' and ' + b + ' and ' + c + ' sum to '+ sumResult +'.','The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulResult +'.'  ];                           
+function sumAndMultiply(a, b, c) { //eslint-disable-line  let s1 = sum(a, b);
+    let s2 = sum(s1[0], c); 
+    let m1 = multiply(a, b);
+    let m2 = multiply(m1[0], c);
+
+    return [
+        s2[0],m2[0],  a + " and " + b + " and " + c + " sum to " + s2[0] + ".",
+        "The product of " + a + " and " + b + " and " + c + " is " + m2[0] + "." ];                           
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -78,9 +82,11 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
-    let sumResult = testArray[0]+testArray[1]+testArray[2];
-    return [sumResult,testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumResult + ' is their sum.'] 
+function sumArray(sumArr) { //eslint-disable-line let x = 0;
+    for (let i = 0; i < sumArr.length; i++) {
+        x = sum(x, sumArr[i])[0];
+    }
+    return [x , sumArr + ' was passed in as an array of numbers, and '+ x +' is their sum.']; 
 }  
 
 // Here is the test for sumArray(); uncomment it to run it
